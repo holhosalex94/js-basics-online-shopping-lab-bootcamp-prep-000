@@ -32,8 +32,8 @@ describe("addToCart()", function() {
   it("properly structures objects in the { itemName: itemPrice } format", function() {
     addToCart("daikon");
 
-    let itemName = Object.keys(getCart()[0])[0];
-    let itemPrice = getCart()[0][itemName];
+    let itemName = getCart()[0][Object.keys(getCart()[0])[0]];
+    let itemPrice = getCart()[0][Object.keys(getCart()[1])[0]];
 
     expect(itemName).toEqual("daikon");
     expect(Number.isInteger(itemPrice)).toBe(true);
